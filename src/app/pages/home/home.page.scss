@@ -1,0 +1,23 @@
+ion-input{
+    border: 1px solid purple;
+    padding-left: 5px !important;
+    border-radius: 5px;
+    &:focus{
+        background-color: red!important;
+    }
+    &::before{
+        border: none !important;
+    }
+    &::after{
+        border: none !important;
+    }
+}
+ion-input.item-has-focus{
+    border-bottom: none !important;
+}
+ion-item.item-has-focus{
+ border-bottom: none !important;
+}
+ion-label{
+    margin-bottom: 10px !important;
+}

@@ -1,0 +1,30 @@
+<div *ngIf="notes.length>0;then contentBlock else noContentBlock">
+</div>
+
+<ng-template #contentBlock>
+  <ion-item-sliding *ngFor="let note of notes;let i = index">
+    <ion-item>
+      <ion-card style="width: 100%;">
+        <ion-card-header>
+          <ion-card-subtitle>{{note.key}}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          {{note.value}}
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    <ion-item-options side="end">
+      <ion-item-option color="light" (click)="remove(i)">
+        <ion-button fill="clear">
+          <ion-icon name="trash" slot="icon-only" color="danger"></ion-icon>
+        </ion-button>
+      </ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+</ng-template>
+
+<ng-template #noContentBlock>
+  <div class="ion-text-center ion-margin">
+    no notes found
+  </div>
+</ng-template>
